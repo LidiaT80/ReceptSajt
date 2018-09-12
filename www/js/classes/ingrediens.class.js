@@ -25,7 +25,7 @@ class Ingrediens{
                 for( let lm of livsmedel){
                     
                     if(lm.Namn.toLowerCase()== namn){
-        
+                        
                         for ( let nv of lm.Naringsvarden.Naringsvarde){
 
                             if( nv.Namn=='Energi (kJ)'){

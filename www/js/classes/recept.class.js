@@ -17,7 +17,7 @@ class Recept{
         let naringsvarde=new Naringsvarde();
 
         for(let ing of this.ingredienser){
-
+            ing=new Ingrediens(ing.namn, ing.mangd, ing.mattenhet);
             naringsvarde.energiKJ+=ing.naringsvarde.energiKJ;
             naringsvarde.energiKcal+=ing.naringsvarde.energiKcal;
             naringsvarde.kolhydrater+=ing.naringsvarde.kolhydrater;
@@ -31,7 +31,15 @@ class Recept{
 
     }
 
-    
+    recalculateRecipe(nrPersoner){
+
+        let nr=nrPersoner/this.nrPersoner;
+
+        for( let ing of this.ingredienser){
+            ing.mangd*=nr;
+        }
+        
+    }
 
     
 }

@@ -4,14 +4,11 @@
         "instruktion": "Strimla kycklingen. Hetta upp en stekpanna med smör. Lägg kycklingstrimlorna i stekpannan och strö över curry, salt och peppar. Stek några minuter på medelhög temperatur, rör om och fortsätt steka. Strimla paprika och bacon. Låt steka tillsammans med kycklingen. Rör sist ner crème fraiche och låt allt koka ca 5 min. Kycklingen och bacon ska vara genomstekt. Smaka av med curry och salt så att du får önskad smak.",
         "bild": "/img/currykyckling.jpg",
         "ingredienser": [
-            {"namn": "kycklingfile", "mangd": "600", "mattenhet": "g"},
-            {"namn": "smör", "mangd": "2", "mattenhet": "msk"},
-            {"namn": "curry", "mangd": "2", "mattenhet": "tsk"},
-            {"namn": "salt", "mangd": "1", "mattenhet": "tsk"},
-            {"namn": "svartpeppar", "mangd": "1", "mattenhet": "krm"},
-            {"namn": "röd paprika", "mangd": "1", "mattenhet": "st"},
-            {"namn": "bacon", "mangd": "140", "mattenhet": "g"},
-            {"namn": "creme fraiche", "mangd": "2", "mattenhet": "dl"}
+            {"namn": "kyckling bröstfilé u skinn färsk tillagad", "mangd": "600", "mattenhet": "g"},
+            {"namn": "smör fett 80 %", "mangd": "2", "mattenhet": "msk"},
+            {"namn": "paprika röd", "mangd": "1", "mattenhet": "st"},
+            {"namn": "gris bacon", "mangd": "140", "mattenhet": "g"},
+            {"namn": "creme fraiche fett 28% smaksatt", "mangd": "2", "mattenhet": "dl"}
         ],
         "tid": "20 min",
         "nrPersoner": "3",
@@ -22,12 +19,10 @@
         "instruktion": "Häll upp mjölken i en kastrull. Borsta svampen och skär i skivor eller mindre bitar. Lägg svampen i mjölken. Låt koka upp. Sänk värmen. Tillsätt salt, vitlök, vitpeppar och crème fraiche och låt puttra några minuter. ",
         "bild": "/img/champinjonsoppa.jpg",
         "ingredienser": [
-            {"namn": "mjölk", "mangd": "5", "mattenhet": "dl"},
-            {"namn": "chapinjoner", "mangd": "500", "mattenhet": "g"},
-            {"namn": "salt", "mangd": "1.5", "mattenhet": "tsk"},
+            {"namn": "mjölk fett 3%", "mangd": "5", "mattenhet": "dl"},
+            {"namn": "champinjoner färska", "mangd": "500", "mattenhet": "g"},
             {"namn": "vitlök", "mangd": "2", "mattenhet": "klyftor"},
-            {"namn": "vitpeppar", "mangd": "1", "mattenhet": "krm"},
-            {"namn": "creme fraiche", "mangd": "2", "mattenhet": "dl"}
+            {"namn": "creme fraiche fett 28% smaksatt", "mangd": "2", "mattenhet": "dl"}
         ],
         "tid": "15 min",
         "nrPersoner": "4",
@@ -39,12 +34,11 @@
         "bild": "/img/ananaskladdkaka.jpg",
         "ingredienser": [
             {"namn": "ananas", "mangd": "280", "mattenhet": "g"},
-            {"namn": "smör", "mangd": "150", "mattenhet": "g"},
-            {"namn": "ägg", "mangd": "3", "mattenhet": "st"},
+            {"namn": "smör fett 80 %", "mangd": "150", "mattenhet": "g"},
+            {"namn": "ägg konventionellt rått", "mangd": "3", "mattenhet": "st"},
             {"namn": "strösocker", "mangd": "2", "mattenhet": "dl"},
             {"namn": "vaniljsocker", "mangd": "1", "mattenhet": "msk"},
-            {"namn": "salt", "mangd": "2", "mattenhet": "krm"},
-            {"namn": "kokosflingor", "mangd": "1.5", "mattenhet": "dl"},
+            {"namn": "kokosflingor torkade", "mangd": "1.5", "mattenhet": "dl"},
             {"namn": "vetemjöl", "mangd": "120", "mattenhet": "g"}
         ],
         "tid": "40 min",

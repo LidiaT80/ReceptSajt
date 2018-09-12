@@ -14,7 +14,7 @@ class ReceptBearbetning{
                     
                     if(rec[searchType].includes(word)){
                         
-                        recipes.push(rec.titel);
+                        recipes.push(new Recept(rec.titel, rec.instruktion, rec.bild, rec.ingredienser, rec.tid, rec.nrPersoner, rec.kategori));
                     }
                 }
             }
@@ -22,4 +22,6 @@ class ReceptBearbetning{
       
         return recipes;
     }
+
+    
 }
