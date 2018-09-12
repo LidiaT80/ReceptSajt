@@ -1,0 +1,54 @@
+[
+    {
+        "titel": "currykyckling",
+        "instruktion": "Strimla kycklingen. Hetta upp en stekpanna med smör. Lägg kycklingstrimlorna i stekpannan och strö över curry, salt och peppar. Stek några minuter på medelhög temperatur, rör om och fortsätt steka. Strimla paprika och bacon. Låt steka tillsammans med kycklingen. Rör sist ner crème fraiche och låt allt koka ca 5 min. Kycklingen och bacon ska vara genomstekt. Smaka av med curry och salt så att du får önskad smak.",
+        "bild": "/img/currykyckling.jpg",
+        "ingredienser": [
+            {"namn": "kycklingfile", "mangd": "600", "mattenhet": "g"},
+            {"namn": "smör", "mangd": "2", "mattenhet": "msk"},
+            {"namn": "curry", "mangd": "2", "mattenhet": "tsk"},
+            {"namn": "salt", "mangd": "1", "mattenhet": "tsk"},
+            {"namn": "svartpeppar", "mangd": "1", "mattenhet": "krm"},
+            {"namn": "röd paprika", "mangd": "1", "mattenhet": "st"},
+            {"namn": "bacon", "mangd": "140", "mattenhet": "g"},
+            {"namn": "creme fraiche", "mangd": "2", "mattenhet": "dl"}
+        ],
+        "tid": "20 min",
+        "nrPersoner": "3",
+        "kategori": "lunch"
+    },
+    {
+        "titel": "champinjonsoppa",
+        "instruktion": "Häll upp mjölken i en kastrull. Borsta svampen och skär i skivor eller mindre bitar. Lägg svampen i mjölken. Låt koka upp. Sänk värmen. Tillsätt salt, vitlök, vitpeppar och crème fraiche och låt puttra några minuter. ",
+        "bild": "/img/champinjonsoppa.jpg",
+        "ingredienser": [
+            {"namn": "mjölk", "mangd": "5", "mattenhet": "dl"},
+            {"namn": "chapinjoner", "mangd": "500", "mattenhet": "g"},
+            {"namn": "salt", "mangd": "1.5", "mattenhet": "tsk"},
+            {"namn": "vitlök", "mangd": "2", "mattenhet": "klyftor"},
+            {"namn": "vitpeppar", "mangd": "1", "mattenhet": "krm"},
+            {"namn": "creme fraiche", "mangd": "2", "mattenhet": "dl"}
+        ],
+        "tid": "15 min",
+        "nrPersoner": "4",
+        "kategori": "kvällsmat"
+    },
+    {
+        "titel": "ananaskladdkaka",
+        "instruktion": "Låt den krossade ananasen rinna av i ett durkslag. Smörj en rund form ca 20 cm i diameter med smör och beströ med kokosflingor. Smält smöret på svag värme. När drygt hälften av smöret smält. Stäng av värmen och tag bort kastrullen från spisen. Rör om tills allt smör smält. Tillsätt ägg, socker, salt, vaniljsocker, kokosflingor. Vispa till en jämn smet för hand eller med elvisp. Tillsätt vetemjölet och den avrunnen krossad ananas. Vispa eller rör snabbt ihop till en jämn smet. Häll kladdkakesmeten i formen. Grädda mitt i ugnen i 175°C i ca 22 min (precis innan den börjar få färg).",
+        "bild": "/img/ananaskladdkaka.jpg",
+        "ingredienser": [
+            {"namn": "ananas", "mangd": "280", "mattenhet": "g"},
+            {"namn": "smör", "mangd": "150", "mattenhet": "g"},
+            {"namn": "ägg", "mangd": "3", "mattenhet": "st"},
+            {"namn": "strösocker", "mangd": "2", "mattenhet": "dl"},
+            {"namn": "vaniljsocker", "mangd": "1", "mattenhet": "msk"},
+            {"namn": "salt", "mangd": "2", "mattenhet": "krm"},
+            {"namn": "kokosflingor", "mangd": "1.5", "mattenhet": "dl"},
+            {"namn": "vetemjöl", "mangd": "120", "mattenhet": "g"}
+        ],
+        "tid": "40 min",
+        "nrPersoner": "8",
+        "kategori": "efterrätt"
+    }
+]

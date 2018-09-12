@@ -1,12 +1,13 @@
 class Recept{
 
-    constructor(titel, instruktion,bild, ingredienser, tid, kategori){
+    constructor(titel, instruktion,bild, ingredienser, tid, nrPersoner, kategori){
         
         this.titel=titel;
         this.instruktion=instruktion;
         this.bild=bild;
         this.ingredienser=ingredienser;
         this.tid=tid;
+        this.nrPersoner=nrPersoner;
         this.kategori=kategori;
         this.naringsvarde=this.calculateNutrPerPerson();
     }
@@ -14,6 +15,7 @@ class Recept{
     calculateNutrPerPerson(){
 
         let naringsvarde=new Naringsvarde();
+
         for(let ing of this.ingredienser){
 
             naringsvarde.energiKJ+=ing.naringsvarde.energiKJ;
@@ -22,9 +24,14 @@ class Recept{
             naringsvarde.protein+=ing.naringsvarde.protein;
             naringsvarde.fett+=ing.naringsvarde.fett;
         }
+        for( let property in naringsvarde){
+            naringsvarde[property]=naringsvarde[property]/this.nrPersoner;
+        }
         return naringsvarde;
 
     }
+
+    
 
     
 }
