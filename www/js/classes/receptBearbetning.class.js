@@ -23,5 +23,42 @@ class ReceptBearbetning{
         return recipes;
     }
 
-    
+    createIngredientList(){
+
+        let ingrediensLista=[];
+
+        $.ajax({
+            'async': false,
+            'global': false,
+            'url':'/json/livsmedelsdata.json',
+            'dataType': "json",
+            'success': function(livsmedel){
+
+                for( let lm of livsmedel){
+
+                    ingrediensLista.push(lm.Namn.toLowerCase());
+                }
+            }
+        });
+
+        return ingrediensLista;
+    }
+
+    autocompleteIngredient(str){
+
+        let lista=this.createIngredientList();
+        let match=[];
+
+        for ( let ing of lista){
+
+            if( str=== ing.substring(0,str.length)){
+
+                match.push(ing);
+            }
+        }
+        return match;
+    }
+
 }
+
+    
