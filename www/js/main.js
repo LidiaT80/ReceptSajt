@@ -1,22 +1,60 @@
-//let pm= new Ingrediens('potatismos', '300', 'g');
 
-//console.log(pm);
-
-/*
-let kaka= new Recept('Kaka', 'baka i ugn', 'img', [new Ingrediens('vetemjöl', '200', 'g'), new Ingrediens('mörk choklad kakao >70 %', '300', 'g'), new Ingrediens("vispgrädde fett 40%", '200', 'g')],'50 min', 3,'kakor');
-
-console.log(kaka);
-kaka.recalculateRecipe(6);
-console.log(kaka);
-
-
-let recept=new ReceptBearbetning().findRecipes('ananas', 'titel');
-console.log(recept);
-*/
 let receptBearbetning=new ReceptBearbetning();
 
-//let lista=receptBearbetning.createIngredientList();
-//console.log(lista);
 
-let match=receptBearbetning.autocompleteIngredient('ma');
-console.log(match);
+let ingForm= new Vue({
+    el: '#form',
+    data: {
+        title: '',
+        description: '',
+        picture: '',
+        time: '',
+        persons: '',
+        category: '',
+        name: '',
+        quantity: '',
+        unit: '',
+        match: [],
+        ingredients: []
+    },
+    methods: {
+        autocomplete: function(){
+            
+            if(this.name.length>0){
+                this.match=receptBearbetning.autocompleteIngredient(this.name);
+            }
+            else{
+                this.match=[];
+            }         
+        },
+        getChoice: function(m) {
+            this.name=m.srcElement.textContent;
+            this.name=this.name.trim();
+            this.match=[];
+        },
+        add: function(){
+            
+            let ingredient=new Ingrediens(this.name, this.quantity, this.unit);
+            this.ingredients.push(ingredient);
+            this.name='';
+            this.quantity='';
+            this.unit='';
+        },
+        save: function(){
+            let recept=new Recept(this.title, this.description, this.picture, this.ingredients, this.time, this.persons, this.category);
+            this.title='';
+            this.description='';
+            this.picture='';
+            this.ingredients=[];
+            this.time='';
+            this.persons='';
+            this.category='';
+            console.log(recept);
+        }
+    }
+
+});
+
+
+
+

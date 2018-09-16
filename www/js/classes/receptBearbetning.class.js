@@ -47,15 +47,9 @@ class ReceptBearbetning{
     autocompleteIngredient(str){
 
         let lista=this.createIngredientList();
-        let match=[];
-
-        for ( let ing of lista){
-
-            if( str=== ing.substring(0,str.length)){
-
-                match.push(ing);
-            }
-        }
+            
+        let match=lista.filter(ing => str=== ing.substring(0,str.length));
+       
         return match;
     }
 

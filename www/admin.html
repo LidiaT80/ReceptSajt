@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header>
+      <h1>~Recept & Näring~</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="">Kategorier</a></li>
+          <li><a href="">Kontakt</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="form">
+        <div id="recipeForm">
+            <h3>Lägg till recept</h3>
+            <input v-model="title" id="title" type="text" placeholder="titel">
+            <input v-model="description" id="description" type="text" placeholder="instruktion">
+            <input v-model="picture" id="picture" type="text" placeholder="bild">
+            <input v-model="time" id="time" type="text" placeholder="tid">
+            <input v-model="persons" id="persons" type="number" placeholder="portioner">
+            <input v-model="category" id="category" type="text" placeholder="kategori">
+        </div>
+        <div id="ingredientForm">
+            <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">
+            <ul>
+                <li v-for="m in match" v-on:click="getChoice">
+                    {{m}}
+                </li>
+            </ul>
+            <input v-model="quantity" id="quantity" type="text" placeholder="mängd">
+            <input v-model="unit" id="unit" type="text" placeholder="måttenhet">
+            <input v-on:click="add" type="submit" value="Lägg till ingrediens">
+            <ul>
+                <li v-for="ing in ingredients">
+                    {{ing.namn}} {{ing.mangd}} {{ing.mattenhet}}
+                </li>
+            </ul>
+            <input v-on:click="save" type="submit" value="Spara">
+        </div>
+    </main>
+    
+    <footer>
+            receptnaring@gmail.com 
+    </footer>
+         
+    <script src="/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="/js/classes/naringsvarde.class.js"></script>
+    <script src="/js/classes/ingrediens.class.js"></script>
+    <script src="/js/classes/recept.class.js"></script>
+    <script src="/js/classes/receptBearbetning.class.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

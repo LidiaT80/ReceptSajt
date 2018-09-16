@@ -1,0 +1,60 @@
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+}
+header{
+    background-color: bisque;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+h1{
+    text-align: center;
+    font-style: oblique;
+}
+main{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+#primary{
+    text-align: center;
+    width: 50%;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#homeimg{
+    width: 400px;
+    height: 200px;
+}
+aside{
+    width: 35%;
+    padding-left: 10%;
+    height: 70%;
+    
+}
+#search{
+    margin-left: 30%;
+}
+aside ul{
+    list-style-type: none;
+    text-align: center;
+}
+footer{
+    background-color: bisque;
+    text-align: end;
+}
+#recipeForm{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+#ingredientForm{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+#ingredientForm ul{
+    list-style-type: none;
+}

@@ -2,11 +2,38 @@
 <html>
   <head>
     <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
   </head>
   <body>
-    <h1>Hej!</h1>
+    <header>
+      <h1>~Recept & Näring~</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Start</a></li>
+          <li><a href="">Kategorier</a></li>
+          <li><a href="">Kontakt</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div id="primary">
+        <h3>Välkommen</h3>
+        <p>Välkommen till vår receptsida. Här kan du hitta många fina recept sorterade på kategorier. Varje recept innehåller information om näringsvärde per portion och du kan själv ändra nummer av portioner.</p>
+        <img src="/img/cooking.jpg" id="homeimg">
+      </div>
+      <aside>
+        <input type="text" id="search" placeholder="sök recept här"  >
+        <input type="button" id="searchButton" value="Sök">
+      </aside>
+    </main>
+    <footer>
+      receptnaring@gmail.com 
+    </footer>
+    
     <script src="/jquery-3.3.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="/js/classes/naringsvarde.class.js"></script>
     <script src="/js/classes/ingrediens.class.js"></script>
     <script src="/js/classes/recept.class.js"></script>
