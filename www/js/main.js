@@ -1,8 +1,8 @@
 
-let receptBearbetning=new ReceptBearbetning();
-
+const router = new VueRouter();
 
 let ingForm= new Vue({
+    router,
     el: '#form',
     data: {
         title: '',
@@ -15,17 +15,16 @@ let ingForm= new Vue({
         quantity: '',
         unit: '',
         match: [],
-        ingredients: []
+        ingredients: [],
+        info: ''
     },
     methods: {
         autocomplete: function(){
-            
-            if(this.name.length>0){
-                this.match=receptBearbetning.autocompleteIngredient(this.name);
+            if(this.name.length>1){
+                router.push({ path: '/autocomplete/'+this.name});
+                axios.get('http://localhost:3000/admin.html/autocomplete/'+this.name)
+                .then( response => this.match=response.data);
             }
-            else{
-                this.match=[];
-            }         
         },
         getChoice: function(m) {
             this.name=m.srcElement.textContent;
@@ -41,7 +40,15 @@ let ingForm= new Vue({
             this.unit='';
         },
         save: function(){
-            let recept=new Recept(this.title, this.description, this.picture, this.ingredients, this.time, this.persons, this.category);
+            let data= JSON.stringify({title: this.title, description: this.description, picture: this.picture, ingredients: this.ingredients,
+                time: this.time, persons: this.persons, category: this.category});
+                
+            axios.post('/admin.html', data, { headers: {
+                'Content-type': 'application/json',
+                }})               
+                .then( response => console.log(response))
+                .catch( error=> console.log(error));
+         
             this.title='';
             this.description='';
             this.picture='';
@@ -49,11 +56,12 @@ let ingForm= new Vue({
             this.time='';
             this.persons='';
             this.category='';
-            console.log(recept);
         }
     }
 
 });
+
+
 
 
 

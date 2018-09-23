@@ -58,3 +58,8 @@ footer{
 #ingredientForm ul{
     list-style-type: none;
 }
+.columnClass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

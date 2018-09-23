@@ -17,20 +17,20 @@
         </ul>
       </nav>
     </header>
-    <main>
-      <div id="primary">
-        <h3>Välkommen</h3>
-        <p>Välkommen till vår receptsida. Här kan du hitta många fina recept sorterade på kategorier. Varje recept innehåller information om näringsvärde per portion och du kan själv ändra nummer av portioner.</p>
-        <img src="/img/cooking.jpg" id="homeimg">
+    <div class="columnClass" id="recipeMain" method="GET" action="/recept.html">
+        <h2 v-model="title" name="titel">title</h2>
+        <p v-model="description" name="instruktion">description</p>
+        <img src=`{{picture}}`>
+        <ul>ingredients
+          <li v-for="ing in ingredients">
+            {{ing.namn}} {{ing.mangd}} {{ing.mattenhet}}
+          </li>
+        </ul>
+        <p v-model="time" name="tid">time</p>
+        <p v-model="nrPersons" name="nrPersoner">portions</p>
+        <p v-model="category" name="kategori">category</p>
+        <p v-model="nutrition">nutrition</p>>
       </div>
-      <aside>
-        <form method="POST" action="/recept.html">
-          <input type="text" name="search" id="search" placeholder="sök recept här"  >
-          <input type="submit" id="searchButton" value="Sök">
-        </form>
-        
-      </aside>
-    </main>
     <footer>
       receptnaring@gmail.com 
     </footer>
