@@ -18,31 +18,27 @@
       </nav>
     </header>
     <div class="columnClass" id="recipeMain" method="GET" action="/recept.html">
-        <h2 v-model="title" name="titel">title</h2>
-        <p v-model="description" name="instruktion">description</p>
+        <h2 v-model="title" name="title">title</h2>
+        <p v-model="description" name="description">description</p>
         <img src=`{{picture}}`>
         <ul>ingredients
           <li v-for="ing in ingredients">
-            {{ing.namn}} {{ing.mangd}} {{ing.mattenhet}}
+            {{ing.name}} {{ing.quantity}} {{ing.unit}}
           </li>
         </ul>
-        <p v-model="time" name="tid">time</p>
-        <p v-model="nrPersons" name="nrPersoner">portions</p>
-        <p v-model="category" name="kategori">category</p>
+        <p v-model="time" name="time">time</p>
+        <p v-model="nrPersons" name="nrPersons">portions</p>
+        <p v-model="category" name="category">category</p>
         <p v-model="nutrition">nutrition</p>>
       </div>
     <footer>
       receptnaring@gmail.com 
     </footer>
     
-    <script src="/jquery-3.3.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/js/classes/naringsvarde.class.js"></script>
-    <script src="/js/classes/ingrediens.class.js"></script>
-    <script src="/js/classes/recept.class.js"></script>
-    <script src="/js/classes/receptBearbetning.class.js"></script>
+    <script src="/js/classes/ingredientBr.class.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>

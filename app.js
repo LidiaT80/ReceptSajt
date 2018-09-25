@@ -11,10 +11,7 @@ app.use(express.static('www'));
 // Start the web server on port 3000
 app.listen(3000,() => console.log('Listening on port 3000'));
 
-const livsmedel= require('./www/json/livsmedelsdata.json');
-let list= livsmedel.map( lm => lm.Namn.toLowerCase());
-
 let Routes= require('./www/js/classes/routes.class');
-new Routes(app, list);
+new Routes(app);
 
 

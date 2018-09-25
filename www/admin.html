@@ -41,7 +41,7 @@
             <input v-on:click="add" type="submit" value="Lägg till ingrediens">
             <ul>
                 <li v-for="ing in ingredients">
-                    {{ing.namn}} {{ing.mangd}} {{ing.mattenhet}}
+                    {{ing.name}} {{ing.quantity}} {{ing.unit}}
                 </li>
             </ul>
             
@@ -52,14 +52,10 @@
             receptnaring@gmail.com 
     </footer>
          
-    <script src="/jquery-3.3.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/js/classes/naringsvarde.class.js"></script>
-    <script src="/js/classes/ingrediens.class.js"></script>
-    <script src="/js/classes/recept.class.js"></script>
-    <script src="/js/classes/receptBearbetning.class.js"></script>
+    <script src="/js/classes/ingredientBr.class.js"></script>
     <script src="/js/main.js"></script>
   </body>
 </html>

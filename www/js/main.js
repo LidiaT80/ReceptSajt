@@ -33,20 +33,23 @@ let ingForm= new Vue({
         },
         add: function(){
             
-            let ingredient=new Ingrediens(this.name, this.quantity, this.unit);
+            let ingredient=new IngredientBr(this.name, this.quantity, this.unit);
             this.ingredients.push(ingredient);
             this.name='';
             this.quantity='';
             this.unit='';
         },
         save: function(){
-            let data= JSON.stringify({title: this.title, description: this.description, picture: this.picture, ingredients: this.ingredients,
-                time: this.time, persons: this.persons, category: this.category});
+            let data= JSON.stringify({title: this.title, description: this.description, picture: this.picture, 
+                ingredients: this.ingredients, time: this.time, nrPersons: this.persons, category: this.category});
                 
             axios.post('/admin.html', data, { headers: {
                 'Content-type': 'application/json',
                 }})               
-                .then( response => console.log(response))
+                .then( response => {
+                    let recipe=JSON.parse(response);
+                    console.log(recipe);
+                })
                 .catch( error=> console.log(error));
          
             this.title='';
