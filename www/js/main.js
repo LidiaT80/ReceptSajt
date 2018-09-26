@@ -16,7 +16,8 @@ let ingForm= new Vue({
         unit: '',
         match: [],
         ingredients: [],
-        info: ''
+        info: '',
+        answer: ''
     },
     methods: {
         autocomplete: function(){
@@ -47,8 +48,7 @@ let ingForm= new Vue({
                 'Content-type': 'application/json',
                 }})               
                 .then( response => {
-                    let recipe=JSON.parse(response);
-                    console.log(recipe);
+                    this.answer=JSON.parse(response.data);
                 })
                 .catch( error=> console.log(error));
          
@@ -64,6 +64,42 @@ let ingForm= new Vue({
 
 });
 
+let recipeView=new Vue({
+    router,
+    el: '#recipeMain',
+    data: {
+        search: '',
+        title: '',
+        description: '',
+        picture: '',
+        ingredients: [],
+        time: '',
+        nrPersons: '',
+        category: '',
+        nutritionValue: {}
+    },
+    methods: {
+        findRecipe: function(){
+            let recipe=this;
+            router.push({path: '/'+this.search});
+            axios.get('http://localhost:3000/recept.html/'+this.search)               
+            .then( response => {
+                let data=response.data;
+                recipe.title=data.title;
+                recipe.description=data.description;
+                recipe.picture=data.picture;
+                recipe.ingredients=data.ingredients;
+                recipe.time=data.time;
+                recipe.nrPersons=data.nrPersons;
+                recipe.category=data.category;
+                recipe.nutritionValue=data.nutritionValue;
+              
+            })
+            .catch( error=> console.log(error));
+        }
+
+    }
+});
 
 
 

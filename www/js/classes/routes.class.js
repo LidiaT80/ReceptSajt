@@ -1,10 +1,8 @@
 
 const bodyParser= require('body-parser');
 const livsmedel= require('../../json/livsmedelsdata.json');
-let recipeFile=require('../../json/recepten.json');
 let Recipe= require('./recipe.class');
 let Ingredient= require('./ingredient.class');
-let NutritionValue= require('./nutritionValue.class');
 
 module.exports= class Routes{
 
@@ -19,7 +17,7 @@ module.exports= class Routes{
         let urlencodedParser=bodyParser.urlencoded({extended:false});
         let jsonParser=bodyParser.json();
                
-        this.app.post('/admin.html',jsonParser, (req, res) => {
+        this.app.post('/admin.html',jsonParser, async (req, res) => {
             
             let ingredients=[];
             for( let ing of req.body.ingredients){
@@ -27,14 +25,16 @@ module.exports= class Routes{
                 ingredients.push(ingredient);
             }
             let recipe= new Recipe(req.body, ingredients, livsmedel);  
-            console.log(recipe);
-                       
+            
+            res.json(await recipe.writeToFile());
         });
 
-        this.app.post('/recept.html', urlencodedParser, (req, res) => {
-            let search= req.body.search;
-            let foundRecipe= recipeFile.filter( rec => rec.titel==search);
-            res.json(foundRecipe[0]);
+        this.app.get('/recept.html/:search', async (req, res) => {
+
+            let search= req.params.search.toLowerCase();
+            let foundRecipe= await Recipe.readFromFile(search);
+            console.log(foundRecipe);
+            res.json(foundRecipe);
                 
         });
 

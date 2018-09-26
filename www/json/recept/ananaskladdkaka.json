@@ -1,0 +1,77 @@
+{
+  "title": "ananaskladdkaka",
+  "description": "Låt den krossade ananasen rinna av i ett durkslag. Smörj en rund form ca 20 cm i diameter med smör och beströ med kokosflingor. Smält smöret på svag värme. När drygt hälften av smöret smält. Stäng av värmen och tag bort kastrullen från spisen. Rör om tills allt smör smält. Tillsätt ägg, socker, salt, vaniljsocker, kokosflingor. Vispa till en jämn smet för hand eller med elvisp. Tillsätt vetemjölet och den avrunnen krossad ananas. Vispa eller rör snabbt ihop till en jämn smet. Häll kladdkakesmeten i formen. Grädda mitt i ugnen i 175°C i ca 22 min (precis innan den börjar få färg).",
+  "picture": "ananaskladdkaka.jpg",
+  "ingredients": [
+    {
+      "name": "ananas",
+      "quantity": "280",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 154,
+        "kolhydrater": 32.76,
+        "protein": 1.1199999999999999,
+        "fett": 1.1199999999999999,
+        "salt": 0
+      }
+    },
+    {
+      "name": "smör fett 80 %",
+      "quantity": "150",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 1093.5,
+        "kolhydrater": 0.75,
+        "protein": 0.6000000000000001,
+        "fett": 123,
+        "salt": 1.7999999999999998
+      }
+    },
+    {
+      "name": "ägg konventionellt rått",
+      "quantity": "150",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 205.5,
+        "kolhydrater": 0.6000000000000001,
+        "protein": 18.375,
+        "fett": 14.595,
+        "salt": 0.54
+      }
+    },
+    {
+      "name": "kokosflingor torkade",
+      "quantity": "100",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 643,
+        "kolhydrater": 3.4,
+        "protein": 6.4,
+        "fett": 63.1,
+        "salt": 0.09
+      }
+    },
+    {
+      "name": "vetemjöl",
+      "quantity": "120",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 422.4,
+        "kolhydrater": 86.88000000000001,
+        "protein": 10.164,
+        "fett": 2.256,
+        "salt": 0
+      }
+    }
+  ],
+  "time": "40 min",
+  "nrPersons": "8",
+  "category": "efterrätt",
+  "nutritionValue": {
+    "energiKcal": 314.8,
+    "kolhydrater": 15.548750000000002,
+    "protein": 4.582375,
+    "fett": 25.508875,
+    "salt": 0.30374999999999996
+  }
+}

@@ -11,7 +11,7 @@
       <nav>
         <ul>
           <li><a href="index.html">Start</a></li>
-          <li><a href="">Kategorier</a></li>
+          <li><a href="recept.html">Recept</a></li>
           <li><a href="">Kontakt</a></li>
           <li><a href="admin.html">Admin</a></li>
         </ul>
@@ -26,7 +26,8 @@
             <input v-model="time" id="time" type="text" name="time" placeholder="tid">
             <input v-model="persons" id="persons" type="number" name="persons" placeholder="portioner">
             <input v-model="category" id="category" type="text" name="category" placeholder="kategori">
-            <input v-on:click="save" type="submit" value="Spara">
+            <input v-on:click="save" type="submit" value="Spara"><br/>
+            {{answer}}
         </form>
         <div id="ingredientForm">
             <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">

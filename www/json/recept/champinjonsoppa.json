@@ -1,0 +1,65 @@
+{
+  "title": "champinjonsoppa",
+  "description": "Häll upp mjölken i en kastrull. Borsta svampen och skär i skivor eller mindre bitar. Lägg svampen i mjölken. Låt koka upp. Sänk värmen. Tillsätt salt, vitlök, vitpeppar och crème fraiche och låt puttra några minuter.",
+  "picture": "champinjonsoppa.jpg",
+  "ingredients": [
+    {
+      "name": "mjölk fett 3%",
+      "quantity": "500",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 300,
+        "kolhydrater": 23.5,
+        "protein": 17.549999999999997,
+        "fett": 15,
+        "salt": 0.5
+      }
+    },
+    {
+      "name": "champinjoner färska",
+      "quantity": "500",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 135,
+        "kolhydrater": 13.5,
+        "protein": 11.899999999999999,
+        "fett": 1.1500000000000001,
+        "salt": 0
+      }
+    },
+    {
+      "name": "vitlök",
+      "quantity": "50",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 80,
+        "kolhydrater": 15.55,
+        "protein": 3.2,
+        "fett": 0.25,
+        "salt": 0.02
+      }
+    },
+    {
+      "name": "creme fraiche fett 28% smaksatt",
+      "quantity": "180",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 495,
+        "kolhydrater": 7.920000000000001,
+        "protein": 3.636,
+        "fett": 50.598,
+        "salt": 2.214
+      }
+    }
+  ],
+  "time": "15 min",
+  "nrPersons": "4",
+  "category": "kvällsmat",
+  "nutritionValue": {
+    "energiKcal": 252.5,
+    "kolhydrater": 15.1175,
+    "protein": 9.0715,
+    "fett": 16.749499999999998,
+    "salt": 0.6835
+  }
+}

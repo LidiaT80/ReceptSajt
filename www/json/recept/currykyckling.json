@@ -1,0 +1,77 @@
+{
+  "title": "currykyckling",
+  "description": "Strimla kycklingen. Hetta upp en stekpanna med smör. Lägg kycklingstrimlorna i stekpannan och strö över curry, salt och peppar. Stek några minuter på medelhög temperatur, rör om och fortsätt steka. Strimla paprika och bacon. Låt steka tillsammans med kycklingen. Rör sist ner crème fraiche och låt allt koka ca 5 min. Kycklingen och bacon ska vara genomstekt. Smaka av med curry och salt så att du får önskad smak.",
+  "picture": "currykyckling.jpg",
+  "ingredients": [
+    {
+      "name": "kyckling bröstfilé u skinn rå",
+      "quantity": "600",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 624,
+        "kolhydrater": 0,
+        "protein": 138.60000000000002,
+        "fett": 7.199999999999999,
+        "salt": 0.96
+      }
+    },
+    {
+      "name": "smör fett 80 %",
+      "quantity": "50",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 364.5,
+        "kolhydrater": 0.25,
+        "protein": 0.2,
+        "fett": 41,
+        "salt": 0.6
+      }
+    },
+    {
+      "name": "paprika röd",
+      "quantity": "250",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 55,
+        "kolhydrater": 10.25,
+        "protein": 1.25,
+        "fett": 0.5750000000000001,
+        "salt": 0
+      }
+    },
+    {
+      "name": "gris bacon",
+      "quantity": "140",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 481.59999999999997,
+        "kolhydrater": 0,
+        "protein": 18.759999999999998,
+        "fett": 45.919999999999995,
+        "salt": 2.8699999999999997
+      }
+    },
+    {
+      "name": "creme fraiche fett 28% smaksatt",
+      "quantity": "180",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 495,
+        "kolhydrater": 7.920000000000001,
+        "protein": 3.636,
+        "fett": 50.598,
+        "salt": 2.214
+      }
+    }
+  ],
+  "time": "20 min",
+  "nrPersons": "3",
+  "category": "lunch",
+  "nutritionValue": {
+    "energiKcal": 673.3666666666667,
+    "kolhydrater": 6.140000000000001,
+    "protein": 54.148666666666664,
+    "fett": 48.431000000000004,
+    "salt": 2.2146666666666666
+  }
+}

@@ -11,26 +11,53 @@
       <nav>
         <ul>
           <li><a href="index.html">Start</a></li>
-          <li><a href="">Kategorier</a></li>
+          <li><a href="recept.html">Recept</a></li>
           <li><a href="">Kontakt</a></li>
           <li><a href="admin.html">Admin</a></li>
         </ul>
       </nav>
     </header>
-    <div class="columnClass" id="recipeMain" method="GET" action="/recept.html">
-        <h2 v-model="title" name="title">title</h2>
-        <p v-model="description" name="description">description</p>
-        <img src=`{{picture}}`>
-        <ul>ingredients
-          <li v-for="ing in ingredients">
-            {{ing.name}} {{ing.quantity}} {{ing.unit}}
-          </li>
-        </ul>
-        <p v-model="time" name="time">time</p>
-        <p v-model="nrPersons" name="nrPersons">portions</p>
-        <p v-model="category" name="category">category</p>
-        <p v-model="nutrition">nutrition</p>>
+    <main>
+      <div class="columnClass" id="recipeMain" >
+        <div class="rowClass">
+          <input type="text" v-model="search" placeholder="sök recept här"  >
+          <input type="submit" v-on:click="findRecipe" id="searchButton" value="Sök">
+        </div>
+        <div>
+          <h2>{{title}}</h2>
+          <p name="description">{{description}}</p>
+          <img v-bind:src="'./img/'+picture">
+        </div>
+        <div class="rowClass">
+          <div class="columnClass">
+            <h3>Ingredienser:</h3>
+            <ul>
+              <li v-for="ing in ingredients">
+                {{ing.name}} {{ing.quantity}} {{ing.unit}}
+              </li>
+            </ul>
+          </div>
+          <div class="columnClass">
+            <p name="time">Tid:{{time}}</p>
+            <p name="nrPersons">Portioner:{{nrPersons}}</p>
+            <p name="category">Kategori:{{category}}</p>
+          </div>
+          <div class="columnClass">
+            <p>energi (kcal): {{nutritionValue.energiKcal}} g</p>
+            <p>kolhydrater: {{nutritionValue.kolhydrater}} g</p>
+            <p>protein: {{nutritionValue.protein}} g</p>
+            <p>fett: {{nutritionValue.fett}} g</p>
+            <p>salt: {{nutritionValue.salt}} g</p>
+          </div>
+            
+            
+            
+           
+            
+        </div>
       </div>
+    </main>
+    
     <footer>
       receptnaring@gmail.com 
     </footer>

@@ -1,48 +1,48 @@
 [
     {
-        "titel": "currykyckling",
-        "instruktion": "Strimla kycklingen. Hetta upp en stekpanna med smör. Lägg kycklingstrimlorna i stekpannan och strö över curry, salt och peppar. Stek några minuter på medelhög temperatur, rör om och fortsätt steka. Strimla paprika och bacon. Låt steka tillsammans med kycklingen. Rör sist ner crème fraiche och låt allt koka ca 5 min. Kycklingen och bacon ska vara genomstekt. Smaka av med curry och salt så att du får önskad smak.",
-        "bild": "/img/currykyckling.jpg",
-        "ingredienser": [
-            {"namn": "kyckling bröstfilé u skinn färsk tillagad", "mangd": "600", "mattenhet": "g"},
-            {"namn": "smör fett 80 %", "mangd": "2", "mattenhet": "msk"},
-            {"namn": "paprika röd", "mangd": "1", "mattenhet": "st"},
-            {"namn": "gris bacon", "mangd": "140", "mattenhet": "g"},
-            {"namn": "creme fraiche fett 28% smaksatt", "mangd": "2", "mattenhet": "dl"}
+        "title": "currykyckling",
+        "description": "Strimla kycklingen. Hetta upp en stekpanna med smör. Lägg kycklingstrimlorna i stekpannan och strö över curry, salt och peppar. Stek några minuter på medelhög temperatur, rör om och fortsätt steka. Strimla paprika och bacon. Låt steka tillsammans med kycklingen. Rör sist ner crème fraiche och låt allt koka ca 5 min. Kycklingen och bacon ska vara genomstekt. Smaka av med curry och salt så att du får önskad smak.",
+        "picture": "currykyckling.jpg",
+        "ingredients": [
+            {"name": "kyckling bröstfilé u skinn färsk tillagad", "quantity": "600", "unit": "g"},
+            {"name": "smör fett 80 %", "quantity": "2", "unit": "msk"},
+            {"name": "paprika röd", "quantity": "1", "unit": "st"},
+            {"name": "gris bacon", "quantity": "140", "unit": "g"},
+            {"name": "creme fraiche fett 28% smaksatt", "quantity": "2", "unit": "dl"}
         ],
-        "tid": "20 min",
-        "nrPersoner": "3",
-        "kategori": "lunch"
+        "time": "20 min",
+        "nrPersons": "3",
+        "category": "lunch"
     },
     {
-        "titel": "champinjonsoppa",
-        "instruktion": "Häll upp mjölken i en kastrull. Borsta svampen och skär i skivor eller mindre bitar. Lägg svampen i mjölken. Låt koka upp. Sänk värmen. Tillsätt salt, vitlök, vitpeppar och crème fraiche och låt puttra några minuter. ",
-        "bild": "/img/champinjonsoppa.jpg",
-        "ingredienser": [
-            {"namn": "mjölk fett 3%", "mangd": "5", "mattenhet": "dl"},
-            {"namn": "champinjoner färska", "mangd": "500", "mattenhet": "g"},
-            {"namn": "vitlök", "mangd": "2", "mattenhet": "klyftor"},
-            {"namn": "creme fraiche fett 28% smaksatt", "mangd": "2", "mattenhet": "dl"}
+        "title": "champinjonsoppa",
+        "description": "Häll upp mjölken i en kastrull. Borsta svampen och skär i skivor eller mindre bitar. Lägg svampen i mjölken. Låt koka upp. Sänk värmen. Tillsätt salt, vitlök, vitpeppar och crème fraiche och låt puttra några minuter. ",
+        "picture": "champinjonsoppa.jpg",
+        "ingredients": [
+            {"name": "mjölk fett 3%", "quantity": "5", "unit": "dl"},
+            {"name": "champinjoner färska", "quantity": "500", "unit": "g"},
+            {"name": "vitlök", "quantity": "2", "unit": "klyftor"},
+            {"name": "creme fraiche fett 28% smaksatt", "quantity": "2", "unit": "dl"}
         ],
-        "tid": "15 min",
-        "nrPersoner": "4",
-        "kategori": "kvällsmat"
+        "time": "15 min",
+        "nrPersons": "4",
+        "category": "kvällsmat"
     },
     {
-        "titel": "ananaskladdkaka",
-        "instruktion": "Låt den krossade ananasen rinna av i ett durkslag. Smörj en rund form ca 20 cm i diameter med smör och beströ med kokosflingor. Smält smöret på svag värme. När drygt hälften av smöret smält. Stäng av värmen och tag bort kastrullen från spisen. Rör om tills allt smör smält. Tillsätt ägg, socker, salt, vaniljsocker, kokosflingor. Vispa till en jämn smet för hand eller med elvisp. Tillsätt vetemjölet och den avrunnen krossad ananas. Vispa eller rör snabbt ihop till en jämn smet. Häll kladdkakesmeten i formen. Grädda mitt i ugnen i 175°C i ca 22 min (precis innan den börjar få färg).",
-        "bild": "/img/ananaskladdkaka.jpg",
-        "ingredienser": [
-            {"namn": "ananas", "mangd": "280", "mattenhet": "g"},
-            {"namn": "smör fett 80 %", "mangd": "150", "mattenhet": "g"},
-            {"namn": "ägg konventionellt rått", "mangd": "3", "mattenhet": "st"},
-            {"namn": "strösocker", "mangd": "2", "mattenhet": "dl"},
-            {"namn": "vaniljsocker", "mangd": "1", "mattenhet": "msk"},
-            {"namn": "kokosflingor torkade", "mangd": "1.5", "mattenhet": "dl"},
-            {"namn": "vetemjöl", "mangd": "120", "mattenhet": "g"}
+        "title": "ananaskladdkaka",
+        "description": "Låt den krossade ananasen rinna av i ett durkslag. Smörj en rund form ca 20 cm i diameter med smör och beströ med kokosflingor. Smält smöret på svag värme. När drygt hälften av smöret smält. Stäng av värmen och tag bort kastrullen från spisen. Rör om tills allt smör smält. Tillsätt ägg, socker, salt, vaniljsocker, kokosflingor. Vispa till en jämn smet för hand eller med elvisp. Tillsätt vetemjölet och den avrunnen krossad ananas. Vispa eller rör snabbt ihop till en jämn smet. Häll kladdkakesmeten i formen. Grädda mitt i ugnen i 175°C i ca 22 min (precis innan den börjar få färg).",
+        "picture": "ananaskladdkaka.jpg",
+        "ingredients": [
+            {"name": "ananas", "quantity": "280", "unit": "g"},
+            {"name": "smör fett 80 %", "quantity": "150", "unit": "g"},
+            {"name": "ägg konventionellt rått", "quantity": "3", "unit": "st"},
+            {"name": "strösocker", "quantity": "2", "unit": "dl"},
+            {"name": "vaniljsocker", "quantity": "1", "unit": "msk"},
+            {"name": "kokosflingor torkade", "quantity": "1.5", "unit": "dl"},
+            {"name": "vetemjöl", "quantity": "120", "unit": "g"}
         ],
-        "tid": "40 min",
-        "nrPersoner": "8",
-        "kategori": "efterrätt"
+        "time": "40 min",
+        "nrPersons": "8",
+        "category": "efterrätt"
     }
 ]
