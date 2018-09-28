@@ -67,8 +67,20 @@ footer{
 .rowClass{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
     width: 90%;
     
+}
+.hidden{
+    display: none;
+}
+.inputClass{
+    
+    justify-content: start;
+    margin-bottom: 20 px;
+    border-bottom: 2 px black;
+}
+.centerClass{
+    align-content: center;
 }

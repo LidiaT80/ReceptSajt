@@ -46,8 +46,11 @@ let ingForm= new Vue({
                 
             axios.post('/admin.html', data, { headers: {
                 'Content-type': 'application/json',
-                }})               
+                }})              
                 .then( response => {
+                   
+                    console.log(response.status);
+                    console.log(response.data);
                     this.answer=JSON.parse(response.data);
                 })
                 .catch( error=> console.log(error));
@@ -76,14 +79,24 @@ let recipeView=new Vue({
         time: '',
         nrPersons: '',
         category: '',
-        nutritionValue: {}
+        nutritionValue: {},
+        portions: '',
+        categories: [ 'frukost', 'förrätt', 'lunch', 'efterrätt', 'kvällsmat'],
+        selected: ''
     },
     methods: {
         findRecipe: function(){
             let recipe=this;
-            router.push({path: '/'+this.search});
-            axios.get('http://localhost:3000/recept.html/'+this.search)               
+            if(this.search==='')
+                this.search='all';
+            if(this.selected==='')
+                this.selected='all';
+            router.push({path: '/'+this.search+'&'+this.selected});
+            axios.get('http://localhost:3000/recept.html/'+this.search+'&'+this.selected)               
             .then( response => {
+                document.getElementById('details1').classList.remove('hidden');
+                document.getElementById('details2').classList.remove('hidden');
+                document.getElementById('details3').classList.remove('hidden');
                 let data=response.data;
                 recipe.title=data.title;
                 recipe.description=data.description;
@@ -96,6 +109,15 @@ let recipeView=new Vue({
               
             })
             .catch( error=> console.log(error));
+        },
+
+        recalculate: function(){
+
+            let nr=this.portions/this.nrPersons;
+            this.nrPersons=this.portions;
+            for( let ing of this.ingredients){
+                ing.quantity*=nr;
+            }
         }
 
     }

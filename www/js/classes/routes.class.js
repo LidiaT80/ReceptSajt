@@ -25,16 +25,27 @@ module.exports= class Routes{
                 ingredients.push(ingredient);
             }
             let recipe= new Recipe(req.body, ingredients, livsmedel);  
-            
-            res.json(await recipe.writeToFile());
+            let answer= await recipe.writeToFile();
+            res.json(answer);
         });
 
-        this.app.get('/recept.html/:search', async (req, res) => {
-
+        this.app.get('/recept.html/:search&:select', async (req, res) => {
+           
             let search= req.params.search.toLowerCase();
-            let foundRecipe= await Recipe.readFromFile(search);
-            console.log(foundRecipe);
+            let select= req.params.select.toLowerCase();
+            
+            if(search==='all' && select==='all'){
+                let allRecipes=await Recipe.createFileList();
+            }
+            else if(search==='all'){
+                let recipesByCategory=await Recipe.findByCategory(select);
+            }
+            else {
+                let foundRecipe= await Recipe.readFromFile(search);
             res.json(foundRecipe);
+            }
+             
+            
                 
         });
 

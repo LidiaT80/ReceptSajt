@@ -39,24 +39,34 @@ module.exports=class Recipe{
 
     }
 
-    recalculateRecipe(nrPersons){
-
-        let nr=nrPersons/this.nrPersons;
-
-        for( let ing of this.ingredients){
-            ing.quantity*=nr;
-        }
-        
-    }
-
     static createFilePath(recipeName){
        
         recipeName = recipeName.toLowerCase().replace(/![a-z]/g,'');
         
         return path.join(__dirname, '../../json', 'recept', recipeName + '.json');
-      }
+    }
+
+    static async createFileList(){
+        let directoryPath= path.join(__dirname, '../../json/recept');
+        let fileList=[];
+        await fs.readdir(directoryPath, function(err, items){
+           fileList= items.map( item => item.substring(0, item.indexOf('.')));
+        });
+        return fileList;
+    }
+
+    static async findByCategory(category){
+        let allRecipes=await Recipe.createFileList();
+        let recipes=[];
+        for (let recipeName of allRecipes){
+            let recipe=await Recipe.readFromFile(recipeName);
+            if( recipe.category===category)
+                recipes.push(recipe);
+        }
+        return recipes;
+    }
      
-      static async readFromFile(recipeName){
+    static async readFromFile(recipeName){
         let filePath = Recipe.createFilePath(recipeName);
         let contents = await fs.readFile(filePath, 'utf-8');
         // if the file doesn't exist we get an error
@@ -67,9 +77,9 @@ module.exports=class Recipe{
         // we'll convert to a Recipe instance
         let data = JSON.parse(contents);
         return data;
-      }
+    }
      
-      async writeToFile(){
+    async writeToFile(){
 
         let filePath =  Recipe.createFilePath(this.title);
         // check if the file exists
@@ -85,7 +95,7 @@ module.exports=class Recipe{
         );
         // assume it worked
         return {success: 'Recipe created!'}
-      }
+    }
      
 
     
