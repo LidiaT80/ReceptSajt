@@ -28,6 +28,13 @@
           </select>
           <input type="submit" v-on:click="findRecipe" id="searchButton" value="Sök">
         </div>
+        <div class="hidden" id="list">
+          <ul>
+            <li v-for="name in recipeList" v-on:click="showSelected">
+              {{name}}
+            </li>
+          </ul>
+        </div>
         <div class="hidden" id="details1">
           <h2 class="centerClass">{{title}}</h2>
           <p class="centerClass" name="description">{{description}}</p>

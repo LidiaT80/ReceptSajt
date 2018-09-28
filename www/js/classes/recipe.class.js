@@ -61,7 +61,7 @@ module.exports=class Recipe{
         for (let recipeName of allRecipes){
             let recipe=await Recipe.readFromFile(recipeName);
             if( recipe.category===category)
-                recipes.push(recipe);
+                recipes.push(recipe.title);
         }
         return recipes;
     }

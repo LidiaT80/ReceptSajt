@@ -36,13 +36,15 @@ module.exports= class Routes{
             
             if(search==='all' && select==='all'){
                 let allRecipes=await Recipe.createFileList();
+                res.json(allRecipes);
             }
             else if(search==='all'){
                 let recipesByCategory=await Recipe.findByCategory(select);
+                res.json(recipesByCategory);
             }
             else {
                 let foundRecipe= await Recipe.readFromFile(search);
-            res.json(foundRecipe);
+                res.json(foundRecipe);
             }
              
             
