@@ -5,19 +5,19 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
   </head>
-  <body>
-    <header>
+  <body> 
+    <header id="indexHeader">
       <h1>~Recept & Näring~</h1>
       <nav>
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="recept.html">Recept</a></li>
           <li><a href="">Kontakt</a></li>
-          <li><a href="admin.html">Admin</a></li>
+          <li><input type="password" v-model="word" v-on:keyup="toAdminPage"></li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main id="indexMain" class="rowClass">
       <div id="primary">
         <h3>Välkommen</h3>
         <p>Välkommen till vår receptsida. Här kan du hitta många fina recept sorterade på kategorier. Varje recept innehåller information om näringsvärde per portion och du kan själv ändra nummer av portioner.</p>
@@ -36,5 +36,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/classes/ingredientBr.class.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
