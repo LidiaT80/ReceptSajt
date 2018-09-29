@@ -38,7 +38,11 @@
         <div class="hidden" id="details1">
           <h2 class="centerClass">{{title}}</h2>
           <p class="centerClass" name="description">{{description}}</p>
-          <img class="centerClass" v-bind:src="'./img/'+picture">
+          <img v-bind:src="'./img/'+picture">
+        </div>
+        <div class="inputClass hidden" id="details3">
+          <input type="number" v-model="portions" placeholder="nummer av portioner">
+          <input type="submit" v-on:click="recalculate" value="Räkna om">
         </div>
         <div class="rowClass hidden" id="details2">
           <div class="columnClass">
@@ -50,21 +54,18 @@
             </ul>
           </div>
           <div class="columnClass">
-            <p name="time">Tid:{{time}}</p>
-            <p name="nrPersons">Portioner:{{nrPersons}}</p>
-            <p name="category">Kategori:{{category}}</p>
+            <p name="time">Tid: {{time}}</p>
+            <p name="nrPersons">Portioner: {{nrPersons}}</p>
+            <p name="category">Kategori: {{category}}</p>
           </div>
           <div class="columnClass">
+            <h3>Näringsvärde per portion:</h3>
             <p>energi (kcal): {{nutritionValue.energiKcal}} g</p>
             <p>kolhydrater: {{nutritionValue.kolhydrater}} g</p>
             <p>protein: {{nutritionValue.protein}} g</p>
             <p>fett: {{nutritionValue.fett}} g</p>
             <p>salt: {{nutritionValue.salt}} g</p>
           </div>
-        </div>
-        <div class="rowClass inputClass hidden" id="details3">
-          <input type="number" v-model="portions" placeholder="nummer av portioner">
-          <input type="submit" v-on:click="recalculate" value="Räkna om">
         </div>
       </div>
     </main>
@@ -78,5 +79,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/classes/ingredientBr.class.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/recept.js"></script>
   </body>
 </html>

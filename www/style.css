@@ -13,11 +13,7 @@ h1{
     text-align: center;
     font-style: oblique;
 }
-main{
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-}
+
 #primary{
     text-align: center;
     width: 50%;
@@ -44,6 +40,16 @@ aside ul{
 footer{
     background-color: bisque;
     text-align: end;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 #recipeForm{
     display: flex;
@@ -61,8 +67,8 @@ footer{
 .columnClass{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: 5%;
+    align-items: flex-start;
+    
 }
 .rowClass{
     display: flex;
@@ -70,6 +76,7 @@ footer{
     align-content: center;
     justify-content: space-between;
     width: 90%;
+    margin-top: 20px;
     
 }
 .hidden{
@@ -77,10 +84,35 @@ footer{
 }
 .inputClass{
     
-    justify-content: start;
+    text-align: end;
     margin-bottom: 20 px;
-    border-bottom: 2 px black;
+    border-style: solid none solid none;
+    border-color: black;
+    height: 38px;
+    width: 100%;
 }
 .centerClass{
-    align-content: center;
+    text-align: center;
 }
+input{
+    padding-bottom: 9px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+select{
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+}
+#recipeMain{
+    margin-bottom: 65px;
+}
+img{
+    align-self: center;
+}
+#details2{
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    justify-content: space-around;
+    width: 100%;
+}
+

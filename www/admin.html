@@ -18,35 +18,37 @@
       </nav>
     </header>
     <main id="form">
-        <form id="recipeForm" >
-            <h3>Lägg till recept</h3>
-            <input v-model="title" id="title" type="text" name="title" placeholder="titel">
-            <input v-model="description" id="description" type="text" name="description" placeholder="instruktion">
-            <input v-model="picture" id="picture" type="text" name="picture" placeholder="bild">
-            <input v-model="time" id="time" type="text" name="time" placeholder="tid">
-            <input v-model="persons" id="persons" type="number" name="persons" placeholder="portioner">
-            <input v-model="category" id="category" type="text" name="category" placeholder="kategori">
-            <input v-on:click="save" type="submit" value="Spara"><br/>
-            {{answer}}
-        </form>
-        <div id="ingredientForm">
-            <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">
-            
-            <ul>
-                <li v-for="m in match" v-on:click="getChoice">
-                    {{m}}
-                </li>
-            </ul>
-            <input v-model="quantity" id="quantity" type="text" placeholder="mängd">
-            <input v-model="unit" id="unit" type="text" placeholder="måttenhet">
-            <input v-on:click="add" type="submit" value="Lägg till ingrediens">
-            <ul>
-                <li v-for="ing in ingredients">
-                    {{ing.name}} {{ing.quantity}} {{ing.unit}}
-                </li>
-            </ul>
-            
-        </div>
+        <div class="rowClass">
+            <form id="recipeForm" >
+                <h3>Lägg till recept</h3>
+                <input v-model="title" id="title" type="text" name="title" placeholder="titel">
+                <input v-model="description" id="description" type="text" name="description" placeholder="instruktion">
+                <input v-model="picture" id="picture" type="text" name="picture" placeholder="bild">
+                <input v-model="time" id="time" type="text" name="time" placeholder="tid">
+                <input v-model="persons" id="persons" type="number" name="persons" placeholder="portioner">
+                <input v-model="category" id="category" type="text" name="category" placeholder="kategori">
+                   
+                {{answer}}
+            </form>
+            <div id="ingredientForm">
+                 <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">
+                        
+                <ul>
+                    <li v-for="m in match" v-on:click="getChoice">
+                        {{m}}
+                    </li>
+                </ul>
+                <input v-model="quantity" id="quantity" type="text" placeholder="mängd">
+                <input v-model="unit" id="unit" type="text" placeholder="måttenhet">
+                <input v-on:click="add" type="submit" value="Lägg till ingrediens">
+                <ul>
+                    <li v-for="ing in ingredients">
+                         {{ing.name}} {{ing.quantity}} {{ing.unit}}
+                    </li>
+                </ul>
+                <input v-on:click="save" type="submit" value="Spara recept">
+            </div>
+        </div>       
     </main>
     
     <footer>
@@ -58,5 +60,6 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/js/classes/ingredientBr.class.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
   </body>
 </html>
