@@ -31,7 +31,8 @@
                 {{answer}}
             </form>
             <div id="ingredientForm">
-                 <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">
+                <h4>Lägg till ingredienser</h4>
+                <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">
                         
                 <ul>
                     <li v-for="m in match" v-on:click="getChoice">
@@ -46,7 +47,7 @@
                          {{ing.name}} {{ing.quantity}} {{ing.unit}}
                     </li>
                 </ul>
-                <input v-on:click="save" type="submit" value="Spara recept">
+                <input v-on:click="save" type="submit" value="Spara recept" id="saveRecipe">
             </div>
         </div>       
     </main>

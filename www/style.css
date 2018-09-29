@@ -59,7 +59,7 @@ footer{
 #ingredientForm{
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
+    width: 40%;
 }
 #ingredientForm ul{
     list-style-type: none;
@@ -77,6 +77,8 @@ footer{
     justify-content: space-between;
     width: 90%;
     margin-top: 20px;
+    margin-left: 5%;
+   
     
 }
 .hidden{
@@ -106,13 +108,21 @@ select{
 #recipeMain{
     margin-bottom: 65px;
 }
-img{
-    align-self: center;
-}
+
 #details2{
     border-bottom-style: solid;
     border-bottom-color: black;
     justify-content: space-around;
     width: 100%;
+}
+#details1{
+    margin: auto;
+    width: 65%;
+}
+#saveRecipe{
+    margin-top: 40px;
+}
+#form{
+    margin-right: 0;
 }
 
