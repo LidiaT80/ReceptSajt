@@ -1,5 +1,6 @@
 
 let NutritionValue=require('./nutritionValue.class');
+const mattOmvandling= require('../../json/mattomvandling.json');
 
 module.exports= class Ingredient{
 
@@ -12,10 +13,44 @@ module.exports= class Ingredient{
         
     }
 
+    setQuantity(){
+
+        let quantity;
+        let unitLC=this.unit.toLowerCase();
+        let ing=mattOmvandling.filter( item => item.namn===this.name);
+     
+        if(unitLC==='dl'){
+            quantity=this.quantity*ing[0].gPerDl;                
+        }
+        else if(unitLC==='tsk'){
+            quantity=0.05*this.quantity*ing[0].gPerDl;
+        }
+        else if(unitLC==='msk'){
+            quantity=0.15*this.quantity*ing[0].gPerDl;
+        }
+        else if(unitLC==='krm'){
+            quantity=0.01*this.quantity*ing[0].gPerDl;
+        }
+        else if(unitLC==='st' || unitLC==='styck'){
+            quantity=this.quantity*ing[0].gPerSt;
+        }
+        else if(unitLC==='klyfta' || unitLC==='klyftor'){
+            quantity=this.quantity*ing[0].gPerKlyfta;
+        }
+        return quantity;
+    }
+
     calculateNutrition(livsmedel){
 
         let name=this.name;
-        let quantity=this.quantity/100;
+        let quantity;
+        if(!(this.unit==='g' || this.unit==='gram')){
+            quantity=this.setQuantity();
+        }
+        else{
+            quantity=this.quantity;
+        }
+        quantity/=100;
         let nutritionValue=new NutritionValue();
 
         for( let lm of livsmedel){
@@ -51,8 +86,4 @@ module.exports= class Ingredient{
         
         return parseFloat(nr);
     }
-
-   
-   
-
 }

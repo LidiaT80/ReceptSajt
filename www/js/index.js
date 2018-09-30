@@ -10,7 +10,7 @@ let indexView=new Vue ({
     methods: {
         toAdminPage: function(){
             
-            if(this.word==='admin'){
+            if(this.word==='adminpage'){
                 window.location.href='http://localhost:3000/admin.html';
             }
         }
