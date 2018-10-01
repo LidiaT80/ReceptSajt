@@ -11,10 +11,12 @@ let Ingredient=require('./ingredient.class');
 
 module.exports=class Recipe{
 
-    constructor(props, ingredients, livsmedel){
+
+    constructor(props, ingredients, picture, livsmedel){
      
         Object.assign(this, props);
         this.ingredients=ingredients;
+        this.picture=picture;
         this.nutritionValue=this.calculateNutrPerPerson(livsmedel);
     }
 

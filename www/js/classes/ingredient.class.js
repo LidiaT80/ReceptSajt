@@ -18,6 +18,9 @@ module.exports= class Ingredient{
         let quantity;
         let unitLC=this.unit.toLowerCase();
         let ing=mattOmvandling.filter( item => item.namn===this.name);
+        if(ing.length===0){
+            return 0;
+        }
      
         if(unitLC==='dl'){
             quantity=this.quantity*ing[0].gPerDl;                

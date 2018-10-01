@@ -18,17 +18,22 @@
     </header>
     <main id="form">
         <div class="rowClass">
-            <form id="recipeForm" >
+            <div id="recipeForm" >
                 <h3>Lägg till recept</h3>
                 <input v-model="title" id="title" type="text" name="title" placeholder="titel">
                 <input v-model="description" id="description" type="text" name="description" placeholder="instruktion">
-                <input v-model="picture" id="picture" type="text" name="picture" placeholder="bild">
                 <input v-model="time" id="time" type="text" name="time" placeholder="tid">
                 <input v-model="persons" id="persons" type="number" name="persons" placeholder="portioner">
                 <input v-model="category" id="category" type="text" name="category" placeholder="kategori">
-                   
+                <form v-on:change="uploadImage($event)" enctype="multipart/form-data">
+                   <h4>Lägg till en bild</h4>
+                   <input type="file" accept="image/*" name="picture"> 
+                   <input type="submit" v-on:click="removeImg" value="Ta bort">
+                </form>
+                
+                
                 {{answer}}
-            </form>
+            </div>
             <div id="ingredientForm">
                 <h4>Lägg till ingredienser</h4>
                 <input v-on:keyup="autocomplete" v-model="name" id="name" type="text" placeholder="namn">
@@ -38,7 +43,7 @@
                         {{m}}
                     </li>
                 </ul>
-                <input v-model="quantity" id="quantity" type="text" placeholder="mängd">
+                <input v-model="quantity" id="quantity" type="number" placeholder="mängd">
                 <input v-model="unit" id="unit" type="text" placeholder="måttenhet">
                 <input v-on:click="add" type="submit" value="Lägg till ingrediens">
                 <ul>

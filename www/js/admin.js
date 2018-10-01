@@ -4,7 +4,7 @@ let ingForm= new Vue({
     data: {
         title: '',
         description: '',
-        picture: '',
+        picture: {},
         time: '',
         persons: '',
         category: '',
@@ -37,13 +37,26 @@ let ingForm= new Vue({
             this.quantity='';
             this.unit='';
         },
+        uploadImage : function(event){
+
+            this.picture=event.target.files[0];
+        },
+        removeImg: function(){
+            this.picture={};
+        },
         save: function(){
             
-            let data= JSON.stringify({title: this.title, description: this.description, picture: this.picture, 
-                ingredients: this.ingredients, time: this.time, nrPersons: this.persons, category: this.category});
+            let data=new FormData();
+            data.append('title', this.title);
+            data.append('description', this.description);
+            data.append('ingredients', JSON.stringify(this.ingredients));
+            data.append('time', this.time);
+            data.append('nrPersons', this.persons);
+            data.append('category', this.category);
+            data.append('picture', this.picture);
             let recipe=this;    
             axios.post('/admin.html', data, { headers: {
-                'Content-type': 'application/json',
+                'Content-type': 'multipart/form-data'
                 }})              
                 .then( response => {
                    

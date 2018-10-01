@@ -3,6 +3,12 @@ const bodyParser= require('body-parser');
 const livsmedel= require('../../json/livsmedelsdata.json');
 let Recipe= require('./recipe.class');
 let Ingredient= require('./ingredient.class');
+const multer  = require('multer');
+const pm = require("promisemaker");
+const fs = pm(
+    require('fs'), 
+    { rejectOnErrors: false }
+);
 
 module.exports= class Routes{
 
@@ -16,15 +22,31 @@ module.exports= class Routes{
 
         let urlencodedParser=bodyParser.urlencoded({extended:false});
         let jsonParser=bodyParser.json();
-               
-        this.app.post('/admin.html',jsonParser, async (req, res) => {
-            
+        let storage = multer.diskStorage({  
+            destination: function (req, file, cb) { 
+                cb(null, './www/img/')
+            },
+            filename: function(req, file, callback) {
+                callback(null, Date.now() + file.originalname);
+            }
+        });
+        let upload = multer({storage: storage});
+        let picture;
+
+        this.app.post('/admin.html', upload.single('picture'), async (req, res) => {
+           
+            if(!req.file){
+                picture='';
+            }
+            else{
+                picture=req.file.filename;
+            }
             let ingredients=[];
-            for( let ing of req.body.ingredients){
+            for( let ing of JSON.parse(req.body.ingredients)){
                 let ingredient= new Ingredient(ing.name, ing.quantity, ing.unit, livsmedel);
                 ingredients.push(ingredient);
             }
-            let recipe= new Recipe(req.body, ingredients, livsmedel);  
+            let recipe= new Recipe(req.body, ingredients, picture, livsmedel);  
             let answer= await recipe.writeToFile();
             res.json(answer);
         });
