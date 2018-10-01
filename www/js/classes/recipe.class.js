@@ -67,6 +67,26 @@ module.exports=class Recipe{
         }
         return recipes;
     }
+
+    static async findWord(word, category){
+        let allRecipes=await Recipe.createFileList();
+        let recipes=[];
+        let cat;
+        
+        for (let recipeName of allRecipes){
+            let recipe=await Recipe.readFromFile(recipeName);
+            if ( category==='all'){
+                cat=true;
+            }
+            else{
+                cat=(recipe.category===category);
+            }
+            if( ((recipe.title.includes(word) || recipe.description.includes(word)) && cat)){
+                recipes.push(recipe.title);
+            }
+        }
+        return recipes;
+    }
      
     static async readFromFile(recipeName){
         let filePath = Recipe.createFilePath(recipeName);

@@ -65,8 +65,16 @@ module.exports= class Routes{
                 res.json(recipesByCategory);
             }
             else {
-                let foundRecipe= await Recipe.readFromFile(search);
-                res.json(foundRecipe);
+                let foundRecipes= await Recipe.findWord(search, select);
+                if (foundRecipes.length>1){
+                    res.json(foundRecipes);
+                }
+                else if(foundRecipes.length===1){
+                    res.json( await Recipe.readFromFile(foundRecipes[0]));
+                }
+                else 
+                    res.json('Not found');
+                
             }
              
             

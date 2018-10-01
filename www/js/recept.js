@@ -29,12 +29,16 @@ let recipeView=new Vue({
                 let data=response.data;
                 if( Array.isArray(data)){
                     document.getElementById('list').classList.remove('hidden');
+                    document.getElementById('details1').classList.add('hidden');
+                    document.getElementById('details2').classList.add('hidden');
+                    document.getElementById('details3').classList.add('hidden');
                     recipe.recipeList=data;
                 }
                 else{
                     document.getElementById('details1').classList.remove('hidden');
                     document.getElementById('details2').classList.remove('hidden');
                     document.getElementById('details3').classList.remove('hidden');
+                    document.getElementById('list').classList.add('hidden');
                     recipe.title=data.title;
                     recipe.description=data.description;
                     recipe.picture=data.picture;
