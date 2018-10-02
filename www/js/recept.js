@@ -55,6 +55,9 @@ let recipeView=new Vue({
                     recipe.time=data.time;
                     recipe.nrPersons=data.nrPersons;
                     recipe.category=data.category;
+                    for( let property in data.nutritionValue){
+                        data.nutritionValue[property]=data.nutritionValue[property].toFixed(3);
+                    }
                     recipe.nutritionValue=data.nutritionValue;
                 } 
                 recipe.search='';
@@ -74,6 +77,7 @@ let recipeView=new Vue({
             this.nrPersons=this.portions;
             for( let ing of this.ingredients){
                 ing.quantity*=nr;
+                ing.quantity=ing.quantity.toFixed(2);
             }
         }
 

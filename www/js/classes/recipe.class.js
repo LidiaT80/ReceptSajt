@@ -36,6 +36,7 @@ module.exports=class Recipe{
         }
         for( let property in nutritionValue){
             nutritionValue[property]=nutritionValue[property]/this.nrPersons;
+            nutritionValue[property]=nutritionValue[property].toFixed(4);
         }
         return nutritionValue;
 

@@ -12,7 +12,7 @@
         <ul>
           <li><a href="index.html">Start</a></li>
           <li><a href="recept.html">Recept</a></li>
-          <li><a href="">Kontakt</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
         </ul>
       </nav>
     </header>
@@ -59,7 +59,7 @@
           </div>
           <div class="columnClass">
             <h3>Näringsvärde per portion:</h3>
-            <p><b>energi(kcal):</b> {{nutritionValue.energiKcal}} g</p>
+            <p><b>energi:</b> {{nutritionValue.energiKcal}} kcal</p>
             <p><b>kolhydrater:</b> {{nutritionValue.kolhydrater}} g</p>
             <p><b>protein:</b> {{nutritionValue.protein}} g</p>
             <p><b>fett:</b> {{nutritionValue.fett}} g</p>
@@ -70,7 +70,12 @@
     </main>
     
     <footer>
-      receptnaring@gmail.com 
+      <p>receptnaring@gmail.com</p>
+      <div>
+        <a href="https://facebook.com"><img src="/img/fbicon.png" class="icon"></a>
+        <a href="http://instagram.com"><img src="/img/instagramicon.png" class="icon"></a>
+        <a href="http://twitter.com"><img src="/img/twittericon.png" class="icon"></a> 
+      </div>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

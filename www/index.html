@@ -6,29 +6,39 @@
     <meta charset="utf-8">
   </head>
   <body> 
-    <header id="indexHeader">
-      <h1>~Recept & Näring~</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Start</a></li>
-          <li><a href="recept.html">Recept</a></li>
-          <li><a href="">Kontakt</a></li>
-          <li><input type="password" v-model="word" v-on:keyup="toAdminPage"></li>
-        </ul>
-      </nav>
-    </header>
-    <main id="indexMain" class="rowClass">
-      <div id="primary">
-        <h3>Välkommen</h3>
-        <p>Välkommen till vår receptsida. Här kan du hitta många fina recept sorterade på kategorier. Varje recept innehåller information om näringsvärde per portion och du kan själv ändra nummer av portioner.</p>
-        <img src="/img/cooking.jpg" id="homeimg">
-      </div>
-      <aside>
-        
-      </aside>
-    </main>
+    <div id="indexPage">
+      <header>
+        <h1>~Recept & Näring~</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="recept.html">Recept</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><input type="password" v-model="word" v-on:keyup="toAdminPage"></li>
+          </ul>
+        </nav>
+      </header>
+      <main id="indexMain" class="rowClass">
+        <div id="primary">
+          <h3>Välkommen</h3>
+          <p>Välkommen till vår receptsida. Här kan du hitta många fina recept sorterade på kategorier. Varje recept innehåller information om näringsvärde per portion och du kan själv ändra nummer av portioner.</p>
+          <img src="/img/cooking.jpg" id="homeimg">
+        </div>
+        <aside>
+          <h4>Kategorier</h4>
+          <ul>
+            <li v-for="c in categories" v-on:click="goToCat">{{c}}</li>
+          </ul>
+        </aside>
+      </main>
+    </div>
     <footer>
-      receptnaring@gmail.com 
+      <p>receptnaring@gmail.com</p>
+      <div>
+        <a href="https://facebook.com"><img src="/img/fbicon.png" class="icon"></a>
+        <a href="http://instagram.com"><img src="/img/instagramicon.png" class="icon"></a>
+        <a href="http://twitter.com"><img src="/img/twittericon.png" class="icon"></a> 
+      </div>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
