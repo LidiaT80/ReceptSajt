@@ -31,6 +31,7 @@ module.exports= class Routes{
         });
         let upload = multer({storage: storage});
         let picture;
+        let jsonParser=bodyParser.json();
 
         this.app.post('/admin.html', upload.single('picture'), async (req, res) => {
             
@@ -88,6 +89,10 @@ module.exports= class Routes{
               );
               res.json(result);
             }
-          );
+        );
+
+        this.app.post('/kontakt.html', jsonParser, (req, res) => {
+            console.log(req.body);
+        });
     }
 }

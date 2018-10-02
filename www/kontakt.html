@@ -20,13 +20,12 @@
         <div>
             <h2>Kontakta oss:</h2>        
             <p><b>Email:</b> receptnaring@gmail.com </p>
-            <p><b>Tel:</b> 072/348 17 39 <br/> (kl 8-15)</p>
         </div>
         <div class="columnClass">
             <h2>Skicka meddelande:</h2>
-            <input type="text" placeholder="namn">
-            <input type="text" placeholder="meddelande">
-            <input type="submit" value="Skicka">
+            <input type="text" placeholder="namn" v-model="name">
+            <input type="text" placeholder="meddelande" v-model="message">
+            <input type="submit" value="Skicka" v-on:click="sendMessage">
         </div>
         <img src="/img/cooking2.jpg" id="contactImg">
         
@@ -44,7 +43,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/js/classes/ingredientBr.class.js"></script>
+    <script src="/js/classes/contactForm.class.js"></script>
     <script src="/js/main.js"></script>
+    <script src="/js/kontakt.js"></script>
   </body>
 </html>
