@@ -24,7 +24,12 @@
                 <input v-model="description" id="description" type="text" name="description" placeholder="instruktion">
                 <input v-model="time" id="time" type="text" name="time" placeholder="tid">
                 <input v-model="persons" id="persons" type="number" name="persons" placeholder="portioner">
-                <input v-model="category" id="category" type="text" name="category" placeholder="kategori">
+                <select v-model="category" value="kategori">
+                    <option disabled value="">kategori</option>
+                    <option v-for="c in categories"> {{c}} </option>
+                </select>
+                <input type="submit" v-on:click="addCategory" value="Lägg till kategori" >
+                <input type="text" v-model="newCat" placeholder="lägg till kategori" id="newCatInput" class="hidden">
                 <form v-on:change="uploadImage($event)" enctype="multipart/form-data">
                    <h4>Lägg till en bild</h4>
                    <input type="file" accept="image/*" name="picture"> 

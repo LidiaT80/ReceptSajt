@@ -1,6 +1,10 @@
+
 let recipeView=new Vue({
     router,
     el: '#recipeMain',
+    created() {
+        this.fetchData();	
+    },
     data: {
         search: '',
         title: '',
@@ -12,11 +16,16 @@ let recipeView=new Vue({
         category: '',
         nutritionValue: {},
         portions: '',
-        categories: [ 'frukost', 'förrätt', 'lunch', 'efterrätt', 'kvällsmat'],
+        categories: [],
         selected: '',
         recipeList: []
     },
     methods: {
+        fetchData() {
+            axios.get('./json/kategorier.json').then(response => {
+                this.categories =response.data.mainCategories;              
+            });
+        },
         findRecipe: function(){
             let recipe=this;
             if(this.search==='')

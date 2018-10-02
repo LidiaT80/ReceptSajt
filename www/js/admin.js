@@ -1,6 +1,9 @@
 let ingForm= new Vue({
     router,
     el: '#form',
+    created() {
+        this.fetchData();	
+    },
     data: {
         title: '',
         description: '',
@@ -14,9 +17,16 @@ let ingForm= new Vue({
         match: [],
         ingredients: [],
         info: '',
-        answer: ''
+        answer: '',
+        categories: [],
+        newCat: ''
     },
     methods: {
+        fetchData() {
+            axios.get('./json/kategorier.json').then(response => {
+                this.categories =response.data.mainCategories;              
+            });
+        },
         autocomplete: function(){
             if(this.name.length>1){
                 router.push({ path: '/autocomplete/'+this.name});
@@ -46,6 +56,9 @@ let ingForm= new Vue({
         },
         save: function(){
             
+            if(this.newCat){
+                this.category=this.newCat;
+            }
             let data=new FormData();
             data.append('title', this.title);
             data.append('description', this.description);
@@ -73,7 +86,10 @@ let ingForm= new Vue({
             this.time='';
             this.persons='';
             this.category='';
+            this.newCat= '';
+        },
+        addCategory: function(){
+            document.getElementById('newCatInput').classList.remove('hidden');
         }
     }
-
 });

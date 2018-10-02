@@ -1,6 +1,7 @@
 
 const bodyParser= require('body-parser');
 const livsmedel= require('../../json/livsmedelsdata.json');
+let categories= require('../../json/kategorier');
 let Recipe= require('./recipe.class');
 let Ingredient= require('./ingredient.class');
 const multer  = require('multer');
@@ -20,8 +21,6 @@ module.exports= class Routes{
 
     setRoutes(){
 
-        let urlencodedParser=bodyParser.urlencoded({extended:false});
-        let jsonParser=bodyParser.json();
         let storage = multer.diskStorage({  
             destination: function (req, file, cb) { 
                 cb(null, './www/img/')
@@ -34,7 +33,11 @@ module.exports= class Routes{
         let picture;
 
         this.app.post('/admin.html', upload.single('picture'), async (req, res) => {
-           
+            
+            if(!(categories.mainCategories.includes(req.body.category))){
+                categories.mainCategories.push(req.body.category);
+                fs.writeFile('./www/json/kategorier.json', JSON.stringify( categories));
+            }
             if(!req.file){
                 picture='';
             }
@@ -74,11 +77,7 @@ module.exports= class Routes{
                 }
                 else 
                     res.json('Not found');
-                
             }
-             
-            
-                
         });
 
         this.app.get('/admin.html/autocomplete/:startOfName', (req, res) => {
@@ -90,6 +89,5 @@ module.exports= class Routes{
               res.json(result);
             }
           );
-        
     }
 }
