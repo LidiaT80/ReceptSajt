@@ -140,7 +140,20 @@ img{
     height: 400px;
 }
 .listImg{
-    width: 120px;
-    height: 75px;
+    width: 240px;
+    height: 150px;
+}
+#list{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+   
+}
+.listClass{
+    margin: 5%;
+    background-color: antiquewhite;
+    border-style: double;
+    border-color: bisque;
+    text-align: center;
 }
 

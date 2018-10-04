@@ -27,6 +27,7 @@ let recipeView=new Vue({
             });
         },
         findRecipe: function(){
+            this.recipeList=[];
             let recipe=this;
             if(this.search==='')
                 this.search='all';
@@ -56,11 +57,8 @@ let recipeView=new Vue({
                     recipe.nrPersons=data.nrPersons;
                     recipe.category=data.category;
                     for( let property in data.nutritionValue){
-                        
-                        data.nutritionValue[property]=data.nutritionValue[property].toFixed(2).replace('.', ',');
-                        
+                        recipe.nutritionValue[property]=parseFloat(data.nutritionValue[property]).toFixed(2).replace('.', ',');
                     }
-                    recipe.nutritionValue=data.nutritionValue;
                 } 
                 recipe.search='';
                 recipe.selected='';        
@@ -71,6 +69,8 @@ let recipeView=new Vue({
             this.search=name.srcElement.textContent.trim();
             this.recipeList=[];
             this.findRecipe();
+            this.search='';
+            this.selected='';
         },
 
         recalculate: function(){

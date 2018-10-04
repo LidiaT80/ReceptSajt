@@ -28,12 +28,10 @@
           <input type="submit" v-on:click="findRecipe" id="searchButton" value="Sök">
         </div>
         <div class="hidden" id="list">
-          <ul>
-            <li v-for="name in recipeList" v-on:click="showSelected">
-              {{name.title}} <br/>
-              <img v-bind:src="'./img/'+name.picture" class="listImg">
-            </li>
-          </ul>
+          <div v-for="name in recipeList" v-on:click="showSelected" class="listClass">
+            <p>{{name.title}}</p>
+            <img v-bind:src="'./img/'+name.picture" class="listImg">
+          </div>
         </div>
         <div class="hidden" id="details1">
           <h2 class="centerClass">{{title}}</h2>
