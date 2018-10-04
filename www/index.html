@@ -14,7 +14,8 @@
             <li><a href="index.html">Start</a></li>
             <li><a href="recept.html">Recept</a></li>
             <li><a href="kontakt.html">Kontakt</a></li>
-            <li><input type="password" v-model="word" v-on:keyup="toAdminPage" placeholder="lösenord"></li>
+            <li v-on:click="login" id="admin">Logga in</li>
+            <li><input type="password" v-model="word" v-on:keyup="toAdminPage" placeholder="lösenord" class="hidden" id="password"></li>
           </ul>
         </nav>
       </header>

@@ -16,6 +16,10 @@ let indexView=new Vue ({
                 this.categories =response.data.mainCategories;              
             });
         },
+        login: function(){
+            document.getElementById('password').classList.remove('hidden');
+            document.getElementById('admin').classList.add('hidden');
+        },
         toAdminPage: function(){
             
             if(this.word==='admin'){
@@ -25,8 +29,6 @@ let indexView=new Vue ({
         goToCat: function(c){
             let category=c.srcElement.textContent;
             window.location.href='http://localhost:3000/recept.html';
-            
-          
         }
     }
 });
