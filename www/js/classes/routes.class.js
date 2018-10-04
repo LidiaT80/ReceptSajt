@@ -59,25 +59,25 @@ module.exports= class Routes{
            
             let search= req.params.search.toLowerCase();
             let select= req.params.select.toLowerCase();
+            let answer=[];
             
             if(search==='all' && select==='all'){
-                let allRecipes=await Recipe.createFileList();
-                res.json(allRecipes);
+                answer=await Recipe.createFileList();
             }
             else if(search==='all'){
-                let recipesByCategory=await Recipe.findByCategory(select);
-                res.json(recipesByCategory);
+                answer=await Recipe.findByCategory(select);
             }
             else {
-                let foundRecipes= await Recipe.findWord(search, select);
-                if (foundRecipes.length>1){
-                    res.json(foundRecipes);
-                }
-                else if(foundRecipes.length===1){
-                    res.json( await Recipe.readFromFile(foundRecipes[0]));
-                }
-                else 
-                    res.json('Not found');
+                answer= await Recipe.findWord(search, select);
+            }
+            if (answer.length>1){
+                res.json(answer);
+            }
+            else if(answer.length===1){
+                res.json( await Recipe.readFromFile(answer[0]));
+            }
+            else{ 
+                res.json('Not found');
             }
         });
 

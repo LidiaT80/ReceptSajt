@@ -1,0 +1,41 @@
+{
+  "title": "chokladtårta",
+  "description": "baka i ugn",
+  "ingredients": [
+    {
+      "name": "ägg konventionellt rått",
+      "quantity": "3",
+      "unit": "st",
+      "nutritionValue": {
+        "energiKcal": 226.04999999999998,
+        "kolhydrater": 0.66,
+        "protein": 20.2125,
+        "fett": 16.0545,
+        "salt": 0.594
+      }
+    },
+    {
+      "name": "mörk choklad kakao >70 %",
+      "quantity": "150",
+      "unit": "g",
+      "nutritionValue": {
+        "energiKcal": 858,
+        "kolhydrater": 76.05000000000001,
+        "protein": 14.535,
+        "fett": 55.47,
+        "salt": 0.045
+      }
+    }
+  ],
+  "time": "50 min",
+  "nrPersons": "6",
+  "category": "tårtor",
+  "picture": "1538581778789kaka.jpg",
+  "nutritionValue": {
+    "energiKcal": "180.6750",
+    "kolhydrater": "12.7850",
+    "protein": "5.7913",
+    "fett": "11.9207",
+    "salt": "0.1065"
+  }
+}

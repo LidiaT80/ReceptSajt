@@ -22,6 +22,9 @@ module.exports= class Ingredient{
             return 0;
         }
      
+        if(unitLC==='kg'){
+            quantity=this.quantity*1000;
+        }
         if(unitLC==='dl'){
             quantity=this.quantity*ing[0].gPerDl;                
         }

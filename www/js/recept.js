@@ -56,7 +56,9 @@ let recipeView=new Vue({
                     recipe.nrPersons=data.nrPersons;
                     recipe.category=data.category;
                     for( let property in data.nutritionValue){
-                        data.nutritionValue[property]=data.nutritionValue[property].toFixed(3);
+                        
+                        data.nutritionValue[property]=data.nutritionValue[property].toFixed(2).replace('.', ',');
+                        
                     }
                     recipe.nutritionValue=data.nutritionValue;
                 } 
@@ -77,7 +79,7 @@ let recipeView=new Vue({
             this.nrPersons=this.portions;
             for( let ing of this.ingredients){
                 ing.quantity*=nr;
-                ing.quantity=ing.quantity.toFixed(2);
+                ing.quantity=ing.quantity.toFixed(2).replace('.', ',');
             }
         }
 
