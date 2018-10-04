@@ -30,7 +30,8 @@
         <div class="hidden" id="list">
           <ul>
             <li v-for="name in recipeList" v-on:click="showSelected">
-              {{name}}
+              {{name.title}} <br/>
+              <img v-bind:src="'./img/'+name.picture" class="listImg">
             </li>
           </ul>
         </div>

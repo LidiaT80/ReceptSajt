@@ -52,20 +52,20 @@ module.exports=class Recipe{
     static async createFileList(){
         let directoryPath= path.join(__dirname, '../../json/recept');
         let fileList=[];
+        let newList=[];
         await fs.readdir(directoryPath, function(err, items){
-           fileList= items.map( item => item.substring(0, item.indexOf('.')));
+            fileList= items.map( item => item.substring(0, item.indexOf('.')));
         });
-        return fileList;
+        for (let recipe of fileList){
+            recipe= await Recipe.readFromFile(recipe);
+            newList.push(recipe)
+        }
+        return newList;
     }
 
     static async findByCategory(category){
         let allRecipes=await Recipe.createFileList();
-        let recipes=[];
-        for (let recipeName of allRecipes){
-            let recipe=await Recipe.readFromFile(recipeName);
-            if( recipe.category===category)
-                recipes.push(recipe.title);
-        }
+        let recipes=allRecipes.filter( recipe => recipe.category===category);
         return recipes;
     }
 
@@ -74,8 +74,7 @@ module.exports=class Recipe{
         let recipes=[];
         let cat;
         
-        for (let recipeName of allRecipes){
-            let recipe=await Recipe.readFromFile(recipeName);
+        for (let recipe of allRecipes){
             if ( category==='all'){
                 cat=true;
             }
@@ -83,7 +82,7 @@ module.exports=class Recipe{
                 cat=(recipe.category===category);
             }
             if( ((recipe.title.includes(word) || recipe.description.includes(word)) && cat)){
-                recipes.push(recipe.title);
+                recipes.push(recipe);
             }
         }
         return recipes;

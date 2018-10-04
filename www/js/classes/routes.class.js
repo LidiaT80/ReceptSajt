@@ -60,7 +60,7 @@ module.exports= class Routes{
             let search= req.params.search.toLowerCase();
             let select= req.params.select.toLowerCase();
             let answer=[];
-            
+    
             if(search==='all' && select==='all'){
                 answer=await Recipe.createFileList();
             }
@@ -74,7 +74,7 @@ module.exports= class Routes{
                 res.json(answer);
             }
             else if(answer.length===1){
-                res.json( await Recipe.readFromFile(answer[0]));
+                res.json( answer[0]);
             }
             else{ 
                 res.json('Not found');
