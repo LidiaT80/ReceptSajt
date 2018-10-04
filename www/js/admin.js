@@ -42,7 +42,21 @@ let ingForm= new Vue({
         add: function(){
             
             let ingredient=new IngredientBr(this.name, this.quantity, this.unit);
-            this.ingredients.push(ingredient);
+            let ing;
+            if(!(ingredient.unit==='g')){
+                axios.get('./json/mattomvandling.json').then( response => {
+                    ing=response.data.filter( item => item.namn===ingredient.name);
+                    if(ing.length===0){
+                        alert('Det gick inte att räkna om måttenhet. Ange mängd i gram.');
+                    }
+                    else{
+                        this.ingredients.push(ingredient);
+                    }
+                });                
+            }
+            else{
+                this.ingredients.push(ingredient);
+            }            
             this.name='';
             this.quantity='';
             this.unit='';

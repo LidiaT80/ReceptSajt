@@ -52,6 +52,9 @@ module.exports= class Ingredient{
         let quantity;
         if(!(this.unit==='g' || this.unit==='gram')){
             quantity=this.setQuantity();
+            if (quantity===0){
+                return 0;
+            }
         }
         else{
             quantity=this.quantity;
