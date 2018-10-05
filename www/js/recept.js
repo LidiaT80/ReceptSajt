@@ -37,7 +37,10 @@ let recipeView=new Vue({
             axios.get('http://localhost:3000/recept.html/'+this.search+'&'+this.selected)               
             .then( response => {
                 let data=response.data;
-                if( Array.isArray(data)){
+                if(typeof data=== 'string'){
+                    alert('Hittade inga recept.');
+                }
+                else if( Array.isArray(data)){
                     document.getElementById('list').classList.remove('hidden');
                     document.getElementById('details1').classList.add('hidden');
                     document.getElementById('details2').classList.add('hidden');

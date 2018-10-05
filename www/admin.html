@@ -35,9 +35,6 @@
                    <input type="file" accept="image/*" name="picture"> 
                    <input type="submit" v-on:click="removeImg" value="Ta bort">
                 </form>
-                
-                
-                {{answer}}
             </div>
             <div id="ingredientForm">
                 <h4>Lägg till ingredienser</h4>
@@ -49,7 +46,10 @@
                     </li>
                 </ul>
                 <input v-model="quantity" id="quantity" type="number" placeholder="mängd">
-                <input v-model="unit" id="unit" type="text" placeholder="måttenhet">
+                <select v-model="unit" id="unit" value="måttenhet">
+                    <option disabled value="">måttenhet</option>
+                    <option v-for="unit in units"> {{unit}} </option>
+                </select>
                 <input v-on:click="add" type="submit" value="Lägg till ingrediens">
                 <ul>
                     <li v-for="ing in ingredients">

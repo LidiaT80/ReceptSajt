@@ -19,7 +19,8 @@ let ingForm= new Vue({
         info: '',
         answer: '',
         categories: [],
-        newCat: ''
+        newCat: '',
+        units: ['g', 'kg', 'dl', 'msk', 'tsk', 'krm', 'st', 'klyftor']
     },
     methods: {
         fetchData() {
@@ -80,18 +81,14 @@ let ingForm= new Vue({
             data.append('time', this.time);
             data.append('nrPersons', this.persons);
             data.append('category', this.category);
-            data.append('picture', this.picture);
-            let recipe=this;    
+            data.append('picture', this.picture);   
             axios.post('/admin.html', data, { headers: {
                 'Content-type': 'multipart/form-data'
                 }})              
                 .then( response => {
-                   
-                    console.log(response.status);
-                    console.log(response.data);
-                    recipe.answer=JSON.parse(response.data);
+                    alert(response.data);
                 })
-                .catch( error=> console.log(error));
+                .catch( error=> alert(error));
          
             this.title='';
             this.description='';
